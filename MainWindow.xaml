@@ -33,6 +33,10 @@
         <Label Content="Result" HorizontalAlignment="Left" Height="29" Margin="370,215,0,0" VerticalAlignment="Top" Width="145" />
         <ComboBox x:Name="ComboBoxLanguage" HorizontalAlignment="Left" Height="25" Margin="650,299,0,0" VerticalAlignment="Top" Width="120" Text="Language"/>
         <ComboBox x:Name="ComboBoxFontStyle" HorizontalAlignment="Left" Height="25" Margin="650,184,0,0" VerticalAlignment="Top" Width="120" Text="Font Style"/>
+        <Label Content="Input" HorizontalAlignment="Left" Height="25" Margin="25,79,0,0" VerticalAlignment="Top" Width="100" FontWeight="Bold"/>
+        <Label Content="Output" HorizontalAlignment="Left" Height="30" Margin="210,84,0,0" VerticalAlignment="Top" Width="100" FontWeight="Bold"/>
+        <Label Content="Font Style" HorizontalAlignment="Left" Height="25" Margin="650,154,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label Content="Language" HorizontalAlignment="Left" Height="25" Margin="655,264,0,0" VerticalAlignment="Top" Width="90"/>
 
 
 
