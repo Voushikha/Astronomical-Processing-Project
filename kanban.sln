@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35222.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kanban", "kanban.csproj", "{9DDF2D02-83B0-45F0-8E5D-7E20A0A034AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9DDF2D02-83B0-45F0-8E5D-7E20A0A034AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DDF2D02-83B0-45F0-8E5D-7E20A0A034AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DDF2D02-83B0-45F0-8E5D-7E20A0A034AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DDF2D02-83B0-45F0-8E5D-7E20A0A034AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {039EB418-BCC7-40A0-929F-3AC7968183CA}
+	EndGlobalSection
+EndGlobal
