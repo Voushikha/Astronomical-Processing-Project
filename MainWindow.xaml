@@ -8,9 +8,32 @@
        
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Background="#FFD9D9D9">
         <Button Content="Calculate" HorizontalAlignment="Left" Height="25" Margin="40,34,0,0" VerticalAlignment="Top" Width="90" Foreground="#FFFFFCFC" Background="#FF2B1919"/>
         <Button Content="Clear" HorizontalAlignment="Left" Height="25" Margin="145,34,0,0" VerticalAlignment="Top" Width="90" Foreground="#FFFFFCFC" Background="#FF2B1919"/>
+        <TextBox x:Name="txtBoxInputBlackhole" HorizontalAlignment="Left" Height="39" Margin="20,346,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" BorderBrush="#FF072FA5"/>
+        <TextBox x:Name="txtBoxInputTemp" HorizontalAlignment="Left" Height="39" Margin="20,271,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" BorderBrush="#FF072FA5"/>
+        <TextBox x:Name="txtBoxInputDistance" HorizontalAlignment="Left" Height="39" Margin="20,206,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" BorderBrush="#FF072FA5"/>
+        <TextBox x:Name="txtBoxInputVelocity" HorizontalAlignment="Left" Height="40" Margin="20,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" BorderBrush="#FF072FA5"/>
+
+        <TextBox x:Name="txtBoxOutputBlackhole" HorizontalAlignment="Left" Height="40" Margin="200,346,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="140" BorderBrush="#FF072FA5" IsReadOnly="True"/>
+        <TextBox x:Name="txtBoxOutputTemp" HorizontalAlignment="Left" Height="40" Margin="200,273,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="140" BorderBrush="#FF072FA5" IsReadOnly="True"/>
+        <TextBox x:Name="txtBoxOutputDistance" HorizontalAlignment="Left" Height="40" Margin="200,207,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="140" BorderBrush="#FF072FA5" IsReadOnly="True"/>
+        <TextBox x:Name="txtBoxOutputVelocity" HorizontalAlignment="Left" Height="40" Margin="200,138,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="140" BorderBrush="#FF072FA5" IsReadOnly="True"/>
+        <TextBox x:Name="txtBoxOutputResult" HorizontalAlignment="Left" Height="40" Margin="370,239,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" BorderBrush="#FF072FA5" IsReadOnly="True"/>
+        <Label Content="Star Velocity" HorizontalAlignment="Left" Height="29" Margin="20,115,0,0" VerticalAlignment="Top" Width="145"/>
+        <Label Content="Star Velocity" HorizontalAlignment="Left" Height="30" Margin="200,115,0,0" VerticalAlignment="Top" Width="140"/>
+        <Label Content="Star Distance" HorizontalAlignment="Left" Height="30" Margin="20,186,0,0" VerticalAlignment="Top" Width="145"/>
+        <Label Content="Star Distance" HorizontalAlignment="Left" Height="30" Margin="200,186,0,0" VerticalAlignment="Top" Width="140"/>
+        <Label Content="Temperature Conversion" HorizontalAlignment="Left" Height="30" Margin="200,250,0,0" VerticalAlignment="Top" Width="140"/>
+        <Label Content="Temperature Conversion" HorizontalAlignment="Left" Height="29" Margin="20,250,0,0" VerticalAlignment="Top" Width="145" />
+
+        <Label Content="Blackhole Event Horizon" HorizontalAlignment="Left" Height="30" Margin="200,325,0,0" VerticalAlignment="Top" Width="140"/>
+        <Label Content="Blackhole Event Horizon" HorizontalAlignment="Left" Height="29" Margin="20,325,0,0" VerticalAlignment="Top" Width="145" />
+        <Label Content="Result" HorizontalAlignment="Left" Height="29" Margin="370,215,0,0" VerticalAlignment="Top" Width="145" />
+        <ComboBox x:Name="ComboBoxLanguage" HorizontalAlignment="Left" Height="25" Margin="650,299,0,0" VerticalAlignment="Top" Width="120" Text="Language"/>
+        <ComboBox x:Name="ComboBoxFontStyle" HorizontalAlignment="Left" Height="25" Margin="650,184,0,0" VerticalAlignment="Top" Width="120" Text="Font Style"/>
+
 
 
     </Grid>
