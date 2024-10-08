@@ -20,9 +20,7 @@ namespace kanban
         {
             InitializeComponent();
         }
-        private void ClrPcker_Background_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color> e)
-        {
-            TextBox.Text = "#" + ClrPcker_Background.SelectedColor.R.ToString() + ClrPcker_Background.SelectedColor.G.ToString() + ClrPcker_Background.SelectedColor.B.ToString();
-        }
+       
+      
     }
 }

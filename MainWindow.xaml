@@ -5,10 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:kanban"
         xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
-     
+        xmlns:hw="http://schemas.hpod9.com/haley/wpf"
+        xmlns:hm="http://schemas.hpod9.com/haley/mvvm"
+      
+        
+
+
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    
+
     <Grid Background="#FFD9D9D9">
         <Button Content="Calculate" HorizontalAlignment="Left" Height="25" Margin="40,34,0,0" VerticalAlignment="Top" Width="90" Foreground="#FFFFFCFC" Background="#FF2B1919"/>
         <Button Content="Clear" HorizontalAlignment="Left" Height="25" Margin="145,34,0,0" VerticalAlignment="Top" Width="90" Foreground="#FFFFFCFC" Background="#FF2B1919"/>
@@ -38,7 +43,15 @@
         <Label Content="Output" HorizontalAlignment="Left" Height="30" Margin="210,84,0,0" VerticalAlignment="Top" Width="100" FontWeight="Bold"/>
         <Label Content="Font Style" HorizontalAlignment="Left" Height="25" Margin="650,154,0,0" VerticalAlignment="Top" Width="75"/>
         <Label Content="Language" HorizontalAlignment="Left" Height="25" Margin="655,264,0,0" VerticalAlignment="Top" Width="90"/>
-        
+
+
+        <StackPanel>
+            <Rectangle Height="30" Width="250"/>
+            <hw:ColorPickerButton Width="120" Margin="625,25,0,0" Height="30" RenderTransformOrigin="0.25,0.468" Content="Color Selection">
+               
+            </hw:ColorPickerButton>
+
+        </StackPanel>
 
 
     </Grid>
