@@ -6,10 +6,25 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <UseWindowsForms>True</UseWindowsForms>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="download.jpg" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Haley.WPF" Version="5.1.1" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="images\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="download.jpg" />
+  </ItemGroup>
+	
+	
 
 </Project>

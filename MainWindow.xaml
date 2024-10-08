@@ -7,7 +7,7 @@
         xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
         xmlns:hw="http://schemas.hpod9.com/haley/wpf"
         xmlns:hm="http://schemas.hpod9.com/haley/mvvm"
-      
+ 
         
 
 
@@ -37,9 +37,22 @@
         <Label Content="Blackhole Event Horizon" HorizontalAlignment="Left" Height="30" Margin="200,325,0,0" VerticalAlignment="Top" Width="140"/>
         <Label Content="Blackhole Event Horizon" HorizontalAlignment="Left" Height="29" Margin="20,325,0,0" VerticalAlignment="Top" Width="145" />
         <Label Content="Result" HorizontalAlignment="Left" Height="29" Margin="370,215,0,0" VerticalAlignment="Top" Width="145" />
-        <ComboBox x:Name="ComboBoxLanguage" HorizontalAlignment="Left" Height="25" Margin="650,299,0,0" VerticalAlignment="Top" Width="120" Text="Language"/>
-        <ComboBox x:Name="ComboBoxFontStyle" HorizontalAlignment="Left" Height="25" Margin="650,184,0,0" VerticalAlignment="Top" Width="120" Text="Font Style"/>
-        <Label Content="Input" HorizontalAlignment="Left" Height="25" Margin="25,79,0,0" VerticalAlignment="Top" Width="100" FontWeight="Bold"/>
+
+
+        <ComboBox x:Name="ComboBoxLanguage" HorizontalAlignment="Left" Height="25" 
+          Margin="650,284,0,0" VerticalAlignment="Top" Width="120"
+          Text="Font Style">
+            <ComboBoxItem Content="English" IsSelected="True"/>
+            <ComboBoxItem Content="Français"/>
+            <ComboBoxItem Content="Deutsch"/>
+
+
+        </ComboBox>
+
+
+
+
+        <Label x:Name="lbl_Input" Content="Input" HorizontalAlignment="Left" Height="25" Margin="25,79,0,0" VerticalAlignment="Top" Width="100" FontWeight="Bold"/>
         <Label Content="Output" HorizontalAlignment="Left" Height="30" Margin="210,84,0,0" VerticalAlignment="Top" Width="100" FontWeight="Bold"/>
         <Label Content="Font Style" HorizontalAlignment="Left" Height="25" Margin="650,154,0,0" VerticalAlignment="Top" Width="75"/>
         <Label Content="Language" HorizontalAlignment="Left" Height="25" Margin="655,264,0,0" VerticalAlignment="Top" Width="90"/>
@@ -47,11 +60,18 @@
 
         <StackPanel>
             <Rectangle Height="30" Width="250"/>
-            <hw:ColorPickerButton Width="120" Margin="625,25,0,0" Height="30" RenderTransformOrigin="0.25,0.468" Content="Color Selection">
-               
-            </hw:ColorPickerButton>
+            <hw:ColorPickerButton Width="120" Margin="625,25,0,0" Height="30" RenderTransformOrigin="0.5,0.5" 
+                                  Content="Color Selection" AutomationProperties.Name="ColorSelect"/>
+
+            <Button Content="Font Style" Margin="635,100,0,0" Height="25" Width="120" Click="Button_Click"/>
+            <TextBox x:Name="tb1" Height="34" TextWrapping="Wrap" Text="TextBox" Width="92"/>
+
+
 
         </StackPanel>
+
+
+
 
 
     </Grid>
