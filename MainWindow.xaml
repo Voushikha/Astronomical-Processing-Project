@@ -12,9 +12,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
 
-    <Grid Background="#FFD9D9D9">
-        <Button Content="Calculate" HorizontalAlignment="Left" Height="25" Margin="40,34,0,0" VerticalAlignment="Top" Width="90" Foreground="#FFFFFCFC" Background="#FF2B1919" Click="Calculate_Click"/>
-        <Button Content="Clear" HorizontalAlignment="Left" Height="25" Margin="145,34,0,0" VerticalAlignment="Top" Width="90" Foreground="#FFFFFCFC" Background="#FF2B1919" Click="Clear_Click"/>
+    <Grid Background="#FFD9D9D9" >
+        <Button x:Name="CalculateButton" Content="Calculate" HorizontalAlignment="Left" Height="25" Margin="40,34,0,0" VerticalAlignment="Top" Width="90" Foreground="#FFFFFCFC" Background="#FF2B1919" Click="Calculate_Click"/>
+        <Button x:Name="ClearButton" Content="Clear" HorizontalAlignment="Left" Height="25" Margin="145,34,0,0" VerticalAlignment="Top" Width="90" Foreground="#FFFFFCFC" Background="#FF2B1919" Click="Clear_Click"/>
         <TextBox x:Name="txtBoxInputBlackhole" HorizontalAlignment="Left" Height="39" Margin="20,346,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" BorderBrush="#FF072FA5"/>
         <TextBox x:Name="txtBoxInputTemp" HorizontalAlignment="Left" Height="39" Margin="20,271,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" BorderBrush="#FF072FA5"/>
         <TextBox x:Name="txtBoxInputDistance" HorizontalAlignment="Left" Height="39" Margin="20,206,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" BorderBrush="#FF072FA5"/>
@@ -25,28 +25,19 @@
         <TextBox x:Name="txtBoxOutputDistance" HorizontalAlignment="Left" Height="40" Margin="200,207,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="140" BorderBrush="#FF072FA5" IsReadOnly="True"/>
         <TextBox x:Name="txtBoxOutputVelocity" HorizontalAlignment="Left" Height="40" Margin="200,138,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="140" BorderBrush="#FF072FA5" IsReadOnly="True"/>
         <TextBox x:Name="txtBoxOutputResult" HorizontalAlignment="Left" Height="40" Margin="370,239,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" BorderBrush="#FF072FA5" IsReadOnly="True"/>
-        <Label Content="Star Velocity" HorizontalAlignment="Left" Height="29" Margin="20,115,0,0" VerticalAlignment="Top" Width="145"/>
-        <Label Content="Star Velocity" HorizontalAlignment="Left" Height="30" Margin="200,115,0,0" VerticalAlignment="Top" Width="140"/>
-        <Label Content="Star Distance" HorizontalAlignment="Left" Height="30" Margin="20,186,0,0" VerticalAlignment="Top" Width="145"/>
-        <Label Content="Star Distance" HorizontalAlignment="Left" Height="30" Margin="200,186,0,0" VerticalAlignment="Top" Width="140"/>
-        <Label Content="Temperature Conversion" HorizontalAlignment="Left" Height="30" Margin="200,250,0,0" VerticalAlignment="Top" Width="140"/>
-        <Label Content="Temperature Conversion" HorizontalAlignment="Left" Height="29" Margin="20,250,0,0" VerticalAlignment="Top" Width="145" />
 
-        <Label Content="Blackhole Event Horizon" HorizontalAlignment="Left" Height="30" Margin="200,325,0,0" VerticalAlignment="Top" Width="140"/>
-        <Label Content="Blackhole Event Horizon" HorizontalAlignment="Left" Height="29" Margin="20,325,0,0" VerticalAlignment="Top" Width="145" />
+        <Label x:Name="InputSVlb" Content="Star Velocity" HorizontalAlignment="Left" Height="29" Margin="20,115,0,0"
+               VerticalAlignment="Top" Width="145"/>
+        <Label x:Name="OutputSVlb" Content="Star Velocity" HorizontalAlignment="Left" Height="30" Margin="200,115,0,0"
+               VerticalAlignment="Top" Width="140"/>
+        <Label  x:Name="InputSDlb" Content="Star Distance" HorizontalAlignment="Left" Height="30" Margin="20,186,0,0" VerticalAlignment="Top" Width="145"/>
+        <Label x:Name="OutputSdlb" Content="Star Distance" HorizontalAlignment="Left" Height="30" Margin="200,186,0,0" VerticalAlignment="Top" Width="140"/>
+        <Label x:Name="InputTClb" Content="Temperature Conversion" HorizontalAlignment="Left" Height="30" Margin="200,250,0,0" VerticalAlignment="Top" Width="140"/>
+        <Label x:Name="OutputTClb" Content="Temperature Conversion" HorizontalAlignment="Left" Height="29" Margin="20,250,0,0" VerticalAlignment="Top" Width="145" />
+
+        <Label x:Name="OutputBHlb" Content="Blackhole Event Horizon" HorizontalAlignment="Left" Height="30" Margin="200,325,0,0" VerticalAlignment="Top" Width="140"/>
+        <Label x:Name="InputBEHlb" Content="Blackhole Event Horizon" HorizontalAlignment="Left" Height="29" Margin="20,325,0,0" VerticalAlignment="Top" Width="145" />
         <Label Content="Result" HorizontalAlignment="Left" Height="29" Margin="370,215,0,0" VerticalAlignment="Top" Width="145" />
-
-
-        <ComboBox x:Name="ComboBoxLanguage" HorizontalAlignment="Left" Height="25" 
-          Margin="650,284,0,0" VerticalAlignment="Top" Width="120"
-          Text="Font Style">
-            <ComboBoxItem Content="English" IsSelected="True"/>
-            <ComboBoxItem Content="Français"/>
-            <ComboBoxItem Content="Deutsch"/>
-
-
-        </ComboBox>
-
 
 
 
@@ -55,18 +46,26 @@
         <Label Content="Font Style" HorizontalAlignment="Left" Height="25" Margin="650,154,0,0" VerticalAlignment="Top" Width="75"/>
         <Label Content="Language" HorizontalAlignment="Left" Height="25" Margin="655,264,0,0" VerticalAlignment="Top" Width="90"/>
 
-
         <StackPanel>
-            <Rectangle Height="30" Width="250"/>
-            <hw:ColorPickerButton Width="120" Margin="625,25,0,0" Height="30" RenderTransformOrigin="0.5,0.5" 
+       
+            <Rectangle  Height="30" Width="250"/>
+            <hw:ColorPickerButton x:Name="colorPkr" Width="120" Margin="625,25,0,0" Height="30" RenderTransformOrigin="0.5,0.5" 
                                   Content="Color Selection" AutomationProperties.Name="ColorSelect"/>
-            <TextBox x:Name="tb1" Height="34" TextWrapping="Wrap" Text="TextBox" Width="92"/>
 
-            <Button Content="Font Style" Margin="635,100,0,0" Height="25" Width="120" Click="Button_Click"/>
-
-
+            <Button x:Name="FontBtn" Content="Font Style" Margin="635,100,0,0" Height="25" Width="120" Click="Button_Click"/>
 
         </StackPanel>
+
+
+        <ComboBox x:Name="comboBoxLanguages" HorizontalAlignment="Left" Margin="650,292,0,0"
+          VerticalAlignment="Top" Width="120" 
+          SelectionChanged="comboBoxLanguages_SelectionChanged">
+            <ComboBoxItem Content="English" Tag="en"/>
+            <ComboBoxItem Content="French" Tag="fr"/>
+            <ComboBoxItem Content="German" Tag="de"/>
+        </ComboBox>
+
+        <TextBox  x:Name="tb1" HorizontalAlignment="Left" Margin="440,89,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
 
 
 
