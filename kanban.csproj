@@ -22,6 +22,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="AstroMaths">
+      <HintPath>..\..\Assessment Task Two PART B\AstroMaths\bin\Release\AstroMaths.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="download.jpg" />
   </ItemGroup>
 	
