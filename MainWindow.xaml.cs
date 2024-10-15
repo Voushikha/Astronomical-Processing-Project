@@ -18,20 +18,16 @@ namespace kanban
     public partial class MainWindow : Window
     {
         private AstroMathFunctions _astroFunctions;
-        //private readonly Dictionary<string, Dictionary<string, string>> translations = new()
-        //{
-        //    { "Star Velocity", new() { { "French", "Vitesse de l'Étoile" }, { "German", "Stellengeschwindigkeit" } } },
-        //    { "Star Distance", new() { { "French", "Distance de l'Étoile" }, { "German", "Sterndistanz" } } },
-        //    { "Temperature Conversion", new() { { "French", "Conversion de Température" }, { "German", "Temperaturumwandlung" } } }
-        //};
+        
 
         public MainWindow()
         {
             InitializeComponent();
             _astroFunctions = new AstroMathFunctions();
+        
 
-            // Add the ColorPickerButton to the MainWindow's resources
-            Resources.Add("ColorPickerButton", new ColorPickerButton());
+            //// Add the ColorPickerButton to the MainWindow's resources
+            //Resources.Add("ColorPickerButton", new ColorPickerButton());
 
 
         }
@@ -104,9 +100,6 @@ namespace kanban
             }
         }
         #endregion
-
-
-
 
 
         #region Calculate & Clear button
@@ -186,7 +179,14 @@ namespace kanban
         }
 
         #region color picker
-        
+        //private void ColorPkr_Click(object sender, RoutedEventArgs e)
+        //{
+        //    ColorDialog colorDialog = new ColorDialog();
+        //    if (colorDialog.ShowDialog() == true)
+        //    {
+        //        mainWindow.Background = new SolidColorBrush(colorDialog.Color);
+        //    }
+        //}
 
         #endregion
     }
