@@ -37,15 +37,15 @@
 
         <Label x:Name="OutputBHlb" Content="Blackhole Event Horizon" HorizontalAlignment="Left" Height="30" Margin="200,325,0,0" VerticalAlignment="Top" Width="140"/>
         <Label x:Name="InputBEHlb" Content="Blackhole Event Horizon" HorizontalAlignment="Left" Height="29" Margin="20,325,0,0" VerticalAlignment="Top" Width="145" />
-        <Label Content="Result" HorizontalAlignment="Left" Height="29" Margin="370,215,0,0" VerticalAlignment="Top" Width="145" />
+        <Label x:Name="Result" Content="Result" HorizontalAlignment="Left" Height="29" Margin="370,215,0,0" VerticalAlignment="Top" Width="145" />
 
 
 
         <Label x:Name="lbl_Input" Content="Input" HorizontalAlignment="Left" Height="25" Margin="25,79,0,0" VerticalAlignment="Top" Width="100" FontWeight="Bold"/>
         <Label Content="Output" HorizontalAlignment="Left" Height="30" Margin="210,84,0,0" VerticalAlignment="Top" Width="100" FontWeight="Bold"/>
-        <Label Content="Font Style" HorizontalAlignment="Left" Height="26" Margin="675,158,0,0" VerticalAlignment="Top" Width="72"/>
-        <Label Content="Language" HorizontalAlignment="Left" Height="26" Margin="660,272,0,0" VerticalAlignment="Top" Width="87"/>
-        <Label Content="colorPkr" Margin="628,87,53,321"/>
+        <Label x:Name="FontStyle" Content="Font Style" HorizontalAlignment="Left" Height="26" Margin="675,158,0,0" VerticalAlignment="Top" Width="72"/>
+        <Label x:Name="Language" Content="Language" HorizontalAlignment="Left" Height="26" Margin="660,272,0,0" VerticalAlignment="Top" Width="87"/>
+        <Label x:Name="colorPkr" Content="colorPkr" Margin="628,87,53,321"/>
 
         <xctk:ColorPicker x:Name="colorPicker"
                           Width="116" 

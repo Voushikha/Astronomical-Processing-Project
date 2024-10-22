@@ -58,7 +58,9 @@ namespace kanban
                     InputBEHlb.Content = "Blackhole Event Horizon";
                     OutputBHlb.Content = "Blackhole Event Horizon";
 
-                    //colorPkr.Content = "Colour Selection";
+                    Language.Content = "Language";
+                    Result.Content = "Result";
+                    colorPkr.Content = "Colour Selection";
                     FontBtn.Content = "Font Style";
                     CalculateButton.Content = "Calculate";
                     ClearButton.Content = "Clear";
@@ -74,8 +76,9 @@ namespace kanban
                     InputBEHlb.Content = "Horizon des événements";
                     OutputBHlb.Content = "Horizon des événements";
 
-
-                    //colorPkr.Content = "Selection de Couleur";
+                    Language.Content = "langue";
+                    Result.Content = "Resultat";
+                    colorPkr.Content = "Selection de Couleur";
                     FontBtn.Content = "Style de police";
                     CalculateButton.Content = "Calculer";
                     ClearButton.Content = "Effacer";
@@ -91,8 +94,9 @@ namespace kanban
                     InputBEHlb.Content = "Ereignishorizont";
                     OutputBHlb.Content = "Ereignishorizont";
 
-
-                    // colorPicker.Content = "Farbauswahl";
+                    Language.Content = "Ergebnis";
+                    Result.Content = "Ergebnis";
+                    colorPkr.Content = "Farbauswahl";
                     FontBtn.Content = "Schriftstil";
                     CalculateButton.Content = "Berechnen";
                     ClearButton.Content = "Löschen";
@@ -219,6 +223,8 @@ namespace kanban
         //        tb1.FontStyle = fontDialog.Font.Italic ? FontStyles.Italic : FontStyles.Normal;
         //    }
         //}
+
+        //Font Style Button 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             // Open the font dialog from System.Windows.Forms
