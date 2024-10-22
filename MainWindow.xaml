@@ -7,7 +7,7 @@
         xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
         xmlns:hw="http://schemas.hpod9.com/haley/wpf"
         xmlns:hm="http://schemas.hpod9.com/haley/mvvm"
- 
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
      
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
@@ -43,29 +43,31 @@
 
         <Label x:Name="lbl_Input" Content="Input" HorizontalAlignment="Left" Height="25" Margin="25,79,0,0" VerticalAlignment="Top" Width="100" FontWeight="Bold"/>
         <Label Content="Output" HorizontalAlignment="Left" Height="30" Margin="210,84,0,0" VerticalAlignment="Top" Width="100" FontWeight="Bold"/>
-        <Label Content="Font Style" HorizontalAlignment="Left" Height="25" Margin="650,154,0,0" VerticalAlignment="Top" Width="75"/>
-        <Label Content="Language" HorizontalAlignment="Left" Height="25" Margin="655,264,0,0" VerticalAlignment="Top" Width="90"/>
+        <Label Content="Font Style" HorizontalAlignment="Left" Height="26" Margin="675,158,0,0" VerticalAlignment="Top" Width="72"/>
+        <Label Content="Language" HorizontalAlignment="Left" Height="26" Margin="660,272,0,0" VerticalAlignment="Top" Width="87"/>
+        <Label Content="colorPkr" Margin="628,87,53,321"/>
 
-        <StackPanel>
-       
-            <Rectangle  Height="30" Width="250"/>
-            <hw:ColorPickerButton x:Name="colorPkr" Width="120" Margin="625,25,0,0" Height="30" RenderTransformOrigin="0.5,0.5" 
-                           Content="Select Color" AutomationProperties.Name="ColorSelect" />
+        <xctk:ColorPicker x:Name="colorPicker"
+                          Width="116" 
+                          SelectedColorChanged="ColorPicker_SelectedColorChanged" 
+                          HorizontalAlignment="Left" Margin="631,107,0,295" />
 
-            <Button x:Name="FontBtn" Content="Font Style" Margin="635,100,0,0" Height="25" Width="120" Click="Button_Click"/>
+        <!-- Add Toggle Button for Night Mode -->
+        <Button x:Name="NightModeToggle" Content="Night Mode" Margin="627,39,53,364"
+                Click="NightModeToggle_Click"/>
+        
 
-        </StackPanel>
+        <Button x:Name="FontBtn" Content="Font Style" Margin="632,184,53,224" Click="Button_Click"/>
 
 
-        <ComboBox x:Name="comboBoxLanguages" HorizontalAlignment="Left" Margin="650,292,0,0"
-          VerticalAlignment="Top" Width="120" 
-          SelectionChanged="comboBoxLanguages_SelectionChanged">
+
+        <ComboBox x:Name="comboBoxLanguages" HorizontalAlignment="Left" Margin="631,301,0,0"
+          VerticalAlignment="Top" Width="116" 
+           SelectionChanged="comboBoxLanguages_SelectionChanged" Height="23">
             <ComboBoxItem Content="English" Tag="en"/>
             <ComboBoxItem Content="French" Tag="fr"/>
             <ComboBoxItem Content="German" Tag="de"/>
         </ComboBox>
-
-        <TextBox  x:Name="tb1" HorizontalAlignment="Left" Margin="440,89,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
 
 
 

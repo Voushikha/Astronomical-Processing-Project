@@ -18,7 +18,7 @@ namespace kanban
     public partial class MainWindow : Window
     {
         private AstroMathFunctions _astroFunctions;
-        
+        private bool isNightMode = false; // To track the current theme FOR NIGHT MODE
 
         public MainWindow()
         {
@@ -58,7 +58,7 @@ namespace kanban
                     InputBEHlb.Content = "Blackhole Event Horizon";
                     OutputBHlb.Content = "Blackhole Event Horizon";
 
-                    colorPkr.Content = "Colour Selection";
+                    //colorPkr.Content = "Colour Selection";
                     FontBtn.Content = "Font Style";
                     CalculateButton.Content = "Calculate";
                     ClearButton.Content = "Clear";
@@ -75,7 +75,7 @@ namespace kanban
                     OutputBHlb.Content = "Horizon des événements";
 
 
-                    colorPkr.Content = "Selection de Couleur";
+                    //colorPkr.Content = "Selection de Couleur";
                     FontBtn.Content = "Style de police";
                     CalculateButton.Content = "Calculer";
                     ClearButton.Content = "Effacer";
@@ -92,13 +92,55 @@ namespace kanban
                     OutputBHlb.Content = "Ereignishorizont";
 
 
-                    colorPkr.Content = "Farbauswahl";
+                    // colorPicker.Content = "Farbauswahl";
                     FontBtn.Content = "Schriftstil";
                     CalculateButton.Content = "Berechnen";
                     ClearButton.Content = "Löschen";
                     break;
             }
         }
+        //private void comboBoxLanguages_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        //{
+        //    // Get the selected language from ComboBox
+        //    ComboBoxItem selectedItem = (ComboBoxItem)comboBoxLanguages.SelectedItem;
+
+        //    // Check if the selectedItem is null or has a null Tag before proceeding
+        //    if (selectedItem != null && selectedItem.Tag != null)
+        //    {
+        //        string selectedLanguage = selectedItem.Tag.ToString();
+        //        ApplyLanguageToAllControls(selectedLanguage);
+        //    }
+        //    else
+        //    {
+        //        // Handle the case where no valid language is selected 
+        //        System.Windows.MessageBox.Show("Please select a valid language.");
+        //    }
+        //}
+        //// Method to change the language of all controls
+        //private void ApplyLanguageToAllControls(string languageCode)
+        //{
+        //    foreach (var child in mainWindow.Children)
+        //    {
+        //        if (child is System.Windows.Controls.Label label)
+        //        {
+        //            if (languageCode == "en")
+        //                label.Content = "English Label";
+        //            else if (languageCode == "fr")
+        //                label.Content = "Étiquette française";
+        //            else if (languageCode == "de")
+        //                label.Content = "Deutsches Etikett";
+        //        }
+        //        else if (child is System.Windows.Controls.TextBox textBox)
+        //        {
+        //            if (languageCode == "en")
+        //                textBox.Text = "English Text";
+        //            else if (languageCode == "fr")
+        //                textBox.Text = "Texte français";
+        //            else if (languageCode == "de")
+        //                textBox.Text = "Deutscher Text";
+        //        }
+        //    }
+        //}
         #endregion
 
 
@@ -166,29 +208,117 @@ namespace kanban
         #endregion
 
         // Font Selection Button Event Handler
+        //private void Button_Click(object sender, RoutedEventArgs e)
+        //{
+        //    var fontDialog = new FontDialog();
+        //    if (fontDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+        //    {
+        //        // Adjust the font properties of the TextBox (tb1) based on user selection
+        //        tb1.FontSize = fontDialog.Font.Size * 96.0 / 72.0; // Convert points to WPF units
+        //        tb1.FontWeight = fontDialog.Font.Bold ? FontWeights.Bold : FontWeights.Normal;
+        //        tb1.FontStyle = fontDialog.Font.Italic ? FontStyles.Italic : FontStyles.Normal;
+        //    }
+        //}
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var fontDialog = new FontDialog();
+            // Open the font dialog from System.Windows.Forms
+            var fontDialog = new System.Windows.Forms.FontDialog();
+
             if (fontDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                // Adjust the font properties of the TextBox (tb1) based on user selection
-                tb1.FontSize = fontDialog.Font.Size * 96.0 / 72.0; // Convert points to WPF units
-                tb1.FontWeight = fontDialog.Font.Bold ? FontWeights.Bold : FontWeights.Normal;
-                tb1.FontStyle = fontDialog.Font.Italic ? FontStyles.Italic : FontStyles.Normal;
+                // Convert font size from points (WinForms) to WPF units (96 DPI)
+                double fontSizeInWpfUnits = fontDialog.Font.Size * 96.0 / 72.0;
+
+                // Apply the font settings to all controls in the main window
+                foreach (var child in mainWindow.Children)
+                {
+                    if (child is System.Windows.Controls.TextBox textBox)
+                    {
+                        textBox.FontSize = fontSizeInWpfUnits;
+                        textBox.FontWeight = fontDialog.Font.Bold ? FontWeights.Bold : FontWeights.Normal;
+                        textBox.FontStyle = fontDialog.Font.Italic ? FontStyles.Italic : FontStyles.Normal;
+                        textBox.FontFamily = new System.Windows.Media.FontFamily(fontDialog.Font.Name);
+                    }
+                    else if (child is System.Windows.Controls.Label label)
+                    {
+                        label.FontSize = fontSizeInWpfUnits;
+                        label.FontWeight = fontDialog.Font.Bold ? FontWeights.Bold : FontWeights.Normal;
+                        label.FontStyle = fontDialog.Font.Italic ? FontStyles.Italic : FontStyles.Normal;
+                        label.FontFamily = new System.Windows.Media.FontFamily(fontDialog.Font.Name);
+                    }
+                    else if (child is System.Windows.Controls.Button button)
+                    {
+                        button.FontSize = fontSizeInWpfUnits;
+                        button.FontWeight = fontDialog.Font.Bold ? FontWeights.Bold : FontWeights.Normal;
+                        button.FontStyle = fontDialog.Font.Italic ? FontStyles.Italic : FontStyles.Normal;
+                        button.FontFamily = new System.Windows.Media.FontFamily(fontDialog.Font.Name);
+                    }
+                }
             }
         }
 
-        #region color picker
-        //private void ColorPkr_Click(object sender, RoutedEventArgs e)
-        //{
-        //    ColorDialog colorDialog = new ColorDialog();
-        //    if (colorDialog.ShowDialog() == true)
-        //    {
-        //        mainWindow.Background = new SolidColorBrush(colorDialog.Color);
-        //    }
-        //}
 
-        #endregion
-    }
+
+        #region color picker / NIGHT MODE
+
+        private void ColorPicker_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<System.Windows.Media.Color?> e)
+        {
+            if (e.NewValue.HasValue)
+            {
+                // Set the background color of the grid to the selected color
+                mainWindow.Background = new SolidColorBrush(e.NewValue.Value);
+            }
+        }
+
+        // This event handler is for the night mode toggle button
+        private void NightModeToggle_Click(object sender, RoutedEventArgs e)
+        {
+            if (isNightMode)
+            {
+                // Switch to day mode
+                mainWindow.Background = new SolidColorBrush(Colors.LightGray); // Background color for day mode
+                NightModeToggle.Content = "Night Mode";
+                ChangeTextColor(Colors.Black); // Change text color to black for day mode
+            }
+            else
+            {
+                // Switch to night mode
+                mainWindow.Background = new SolidColorBrush(Colors.Black); // Background color for night mode
+                NightModeToggle.Content = "Day Mode";
+                ChangeTextColor(Colors.White); // Change text color to white for night mode
+                ChangeTextBox(Colors.Black);
+            }
+
+            isNightMode = !isNightMode; // Toggle the mode
+        }
+
+        // Helper function to change text color for all labels
+        private void ChangeTextColor(System.Windows.Media.Color color)
+        {
+            foreach (var child in mainWindow.Children)
+            {
+                if (child is System.Windows.Controls.Label label)
+                {
+                    label.Foreground = new SolidColorBrush(color);
+                }
+              
+            }
+        }
+
+        // Helper function to change text color for all inside textboxes
+        private void ChangeTextBox(System.Windows.Media.Color color)
+
+        {
+            foreach (var child in mainWindow.Children) { 
+                if (child is System.Windows.Controls.TextBox textBox)
+            {
+                textBox.Foreground = new SolidColorBrush(color);
+            }
+            }
+        }
+
+
+    #endregion
+}
     
 }
